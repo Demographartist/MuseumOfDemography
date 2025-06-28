@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Museum of Demography</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #f0f0f0;
+      padding: 20px 30px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header h2 {
+      margin: 5px 0 0;
+      font-size: 18px;
+      font-weight: normal;
+      color: #555;
+    }
+
+    main {
+      display: flex;
+      flex: 1;
+    }
+
+    .menu {
+      width: 450px;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .menu-top a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .menu-top a:hover {
+      color: #ccc;
+    }
+
+    .acknowledgement {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 30px;
+      padding-right: 10px;
+      overflow-y: auto;
+      max-height: 300px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #photo {
+      width: 800px;
+      height: 500px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    #caption {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Museum of World Demography</h1>
+    <h2>Population data is within your grasp </h2>
+  </header>
+
+  <main>
+    <div class="menu">
+      <div class="menu-top">
+       <a href="1-index.html">
+          The virtual wing of the Museum of Demography.
+        </a>
+        <a>  ————————————    </a>
+        <a href="1-make.html">
+          Design your very own model in R
+        </a>
+        <a>  ————————————    </a>
+        <a href="1-print.html">
+          Print your own model from the Museum
+        </a>
+      </div>
+
+      <div class="acknowledgement">
+        <p>
+          This museum would not be possible, or even dreamt of, without the amazing <a href="https://makerspace.anu.edu.au/" style="color: #99ccff;" target="_blank">ANU Makerspace</a>, who live the mantra of learning through doing, and see a University as a place to share knowledge, not to keep it siloed. 
+          Thanks to the amazing team of Rachael Hanrick, Jordan Haddrick and Cat Evans, led by the visionary Dr. John Debs. 
+        </p>
+        <p>
+          It would not be possible without the amazing data in the 
+              <a href="https://www.mortality.org/" style="color: #99ccff;" target="_blank">Human Morality Database</a>,the 
+              <a href="https://www.humanfertility.org//" style="color: #99ccff;" target="_blank">Human Fertility Database</a>, and the 
+              <a href="https://www.abs.gov.au/statistics/people/population/regional-population/latest-release#interactive-maps" style="color: #99ccff;" target="_blank">ABS pop density grid</a>. Thanks for the amazing data you provide.
+        </p>
+        <p>
+          Thanks to the <a href="https://demography.cass.anu.edu.au/" style="color: #99ccff;" target="_blank">ANU School of Demography</a> for the energy and excitement that measuring the human condition generates. I promise to get back to my actual PhD soon.
+        </p>
+        <p>
+          Finally, while I can quantify the human condition. This museum comes alive with the art of the amazingly tallented  
+          <a href="https://makerspace.anu.edu.au/" style="color: #99ccff;" target="_blank">Isabel Waters</a> and
+          <a href="https://makerspace.anu.edu.au/" style="color: #99ccff;" target="_blank">Tess Carlton</a> who express the human condition. 
+        </p>
+
+      </div>
+    </div>
+
+    <div class="content">
+      <img id="photo" src="https://cdn.glitch.global/243e30c0-188c-4a27-ac5a-08186871761b/thumbnails%2FAustralianPopulation.jpg?1750940950653" alt="Photo 1">
+      <div id="caption">Caption for Photo 1</div>
+    </div>
+  </main>
+
+  <script>
+    const images = [
+      { src: "https://cdn.glitch.global/243e30c0-188c-4a27-ac5a-08186871761b/thumbnails%2FAustralianPopulation.jpg?1750940950653", caption: "Australian Pyramid" },
+      { src: "https://cdn.glitch.global/243e30c0-188c-4a27-ac5a-08186871761b/thumbnails%2FSydney_map.jpg?1747225555280"          , caption: "Italian deaths, with Anguish" },
+      { src: "https://cdn.glitch.global/243e30c0-188c-4a27-ac5a-08186871761b/thumbnails%2FSydney_map.jpg?1747225555280"          , caption: "Tessy shirt" },
+      { src: "https://cdn.glitch.global/243e30c0-188c-4a27-ac5a-08186871761b/thumbnails%2FAthens.jpg?1750947256076"              , caption: "Athens population density - VR experience" },
+      { src: "https://cdn.glitch.global/243e30c0-188c-4a27-ac5a-08186871761b/thumbnails%2FAustralianPopulation.jpg?1750940950653", caption: "Isabel Waters" }
+    ];
+
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      document.getElementById("photo").src = images[index].src;
+      document.getElementById("caption").textContent = images[index].caption;
+    }, 2500);
+  </script>
+
+</body>
+</html>
